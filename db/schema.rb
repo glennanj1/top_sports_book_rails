@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2021_03_14_220303) do
 
   create_table "bets", force: :cascade do |t|
-    t.integer "amount"
     t.boolean "placed"
     t.datetime "time"
     t.integer "odds"
