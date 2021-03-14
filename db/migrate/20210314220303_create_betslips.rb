@@ -4,6 +4,7 @@ class CreateBetslips < ActiveRecord::Migration[6.1]
       t.boolean :placed
       t.integer :amount
       t.string :status
+      t.integer :bet_id
 
       t.timestamps
     end

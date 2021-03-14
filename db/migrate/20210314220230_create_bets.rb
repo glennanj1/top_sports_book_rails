@@ -5,6 +5,7 @@ class CreateBets < ActiveRecord::Migration[6.1]
       t.boolean :placed
       t.datetime :time
       t.integer :odds
+      t.integer :event_id
 
       t.timestamps
     end
