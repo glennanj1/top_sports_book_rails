@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :bets, only: [:index, :show] do 
     resources :betslips, only: [:index, :show, :create]
   end
