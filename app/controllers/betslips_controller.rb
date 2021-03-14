@@ -1,0 +1,2 @@
+class BetslipsController < ApplicationController
+end
