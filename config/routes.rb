@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   
-  root to: 'devise/sessions#new'
+  root to: 'welcome#home'
 
   
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   
-
   resources :bets, only: [:index, :show] do 
-    resources :betslips, only: [:index, :show, :create]
+    resources :betslips, only: [:index, :show, :new, :create]
   end
   resources :events, only: [:index, :show]
   resources :leagues, only: [:index, :show]
