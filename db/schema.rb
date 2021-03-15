@@ -10,44 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_15_000950) do
+ActiveRecord::Schema.define(version: 2021_03_15_213051) do
 
   create_table "bets", force: :cascade do |t|
-    t.boolean "placed"
-    t.datetime "time"
-    t.integer "odds"
-    t.integer "event_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "betslips", force: :cascade do |t|
-    t.boolean "placed"
+    t.integer "odd_id"
+    t.integer "user_id"
     t.integer "amount"
-    t.string "status"
-    t.integer "bet_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "events", force: :cascade do |t|
-    t.string "name"
-    t.datetime "time"
-    t.integer "league_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "leagues", force: :cascade do |t|
-    t.string "name"
+  create_table "odds", force: :cascade do |t|
     t.integer "sport_id"
+    t.string "sport_key"
+    t.string "sport_nice"
+    t.string "teams"
+    t.string "home_team"
+    t.datetime "commence_time"
+    t.string "site_key"
+    t.integer "odds"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sports", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
+    t.string "key"
+    t.boolean "active"
+    t.string "group"
+    t.string "details"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

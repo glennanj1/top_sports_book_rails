@@ -1,4 +1,4 @@
 class Bet < ApplicationRecord
-    has_many :betslips 
-    belongs_to :event 
+    belongs_to :odd 
+    belongs_to :user
 end

@@ -1,10 +1,10 @@
 class CreateBets < ActiveRecord::Migration[6.1]
   def change
     create_table :bets do |t|
-      t.boolean :placed
-      t.datetime :time
-      t.integer :odds
-      t.integer :event_id
+      t.integer :odd_id
+      t.integer :user_id
+      t.integer :amount
+      
 
       t.timestamps
     end

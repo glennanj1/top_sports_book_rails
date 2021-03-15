@@ -1,3 +1,4 @@
 class Sport < ApplicationRecord
-    has_many :leagues
+    has_many :odds
+    has_many :bets, through: :odds
 end
