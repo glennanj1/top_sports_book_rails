@@ -1,1 +1,4 @@
 <h1>Sports</h1>
+<% @sports.each do |s| %>
+<h2><%= link_to s.name, leagues_path %></h2>
+<% end %>

@@ -1,1 +1,6 @@
 <h1>Leagues</h1>
+<% @leagues.each do |l| %>
+    
+    <h2><%= link_to l.name, events_path(l) %></h2>
+    
+<% end %>
