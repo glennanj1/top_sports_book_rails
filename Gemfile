@@ -2,8 +2,13 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
+gem 'thin'
+gem "devise", github: "heartcombo/devise", branch: "master"
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
 
-gem 'devise'
+
+gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
