@@ -31,7 +31,7 @@ module OddsHelper
                 odd << "#{y['odds']['h2h']}"
             end
             
-            o = Odd.new(sport_id: sport_id, sport_key: sport_key, sport_nice: sport_nice, teams: teams, home_team: home_team, commence_time: commence_time, site_and_odds: site, odds:)
+            o = Odd.new(sport_id: sport_id, sport_key: sport_key, sport_nice: sport_nice, teams: teams, home_team: home_team, commence_time: commence_time, site_and_odds: site, odds: odd)
             o.save
 
         end 

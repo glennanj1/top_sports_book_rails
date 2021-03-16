@@ -4,6 +4,8 @@ class CreateBets < ActiveRecord::Migration[6.1]
       t.integer :odd_id
       t.integer :user_id
       t.integer :amount
+     
+      
       
 
       t.timestamps
