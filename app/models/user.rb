@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :betslips 
-  has_many :bets, through: :betslips 
+  has_many :bets
+  has_many :odds, through: :bets 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

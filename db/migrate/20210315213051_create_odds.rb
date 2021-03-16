@@ -7,8 +7,8 @@ class CreateOdds < ActiveRecord::Migration[6.1]
       t.string :teams 
       t.string :home_team
       t.datetime :commence_time 
-      t.string :site_key 
-      t.integer :odds
+      t.string :site_and_odds
+      t.string :odds
 
 
       t.timestamps

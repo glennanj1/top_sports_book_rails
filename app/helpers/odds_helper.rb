@@ -11,23 +11,27 @@ module OddsHelper
         request["x-rapidapi-host"] = 'odds.p.rapidapi.com'
 
         response = http.request(request)
-        binding.pry
+    
         parse = JSON.parse(response.read_body)
         parse['data'].each do |x|
             sport_id = 7
             sport_key = x['sport_key']
             sport_nice = x['sport_nice']
-            teams = x['teams']
+            teams = "#{x['teams'][0]} vs #{x['teams'][1]}"
             home_team = x['home_team']
             commence_time = x['commence_time']
-            site = x['sites'].map! do |y|
-                y['site_nice']
+            site = []
+            odd = []
+            
+            sites = x['sites'].map do |y|
+              site << "Book: #{y['site_nice']} Odds: #{y['odds']['h2h'][0]} #{y['odds']['h2h'][1]} #{y['odds']['h2h'][2]}"
             end
 
-            binding.pry
-          
+            odds = x['sites'].map do |y|
+                odd << "#{y['odds']['h2h']}"
+            end
             
-            o = Odd.new(sport_id: sport_id, sport_key: sport_key, sport_nice: sport_nice, teams: teams, home_team: home_team, commence_time: commence_time, site_key: site)
+            o = Odd.new(sport_id: sport_id, sport_key: sport_key, sport_nice: sport_nice, teams: teams, home_team: home_team, commence_time: commence_time, site_and_odds: site, odds:)
             o.save
 
         end 

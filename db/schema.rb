@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2021_03_15_213051) do
     t.string "teams"
     t.string "home_team"
     t.datetime "commence_time"
-    t.string "site_key"
-    t.integer "odds"
+    t.string "site_and_odds"
+    t.string "odds"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
