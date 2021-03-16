@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   
   resources :sports, only: [:index]  
 
-  resources :odds 
-  resources :bets
+  resources :odds, only: [:index] do 
+    resources :bets
+  end
       
 end

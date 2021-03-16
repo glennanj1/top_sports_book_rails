@@ -1,2 +1,0 @@
-module BetslipsHelper
-end

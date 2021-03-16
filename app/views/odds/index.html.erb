@@ -1,7 +1,9 @@
 <h1>Matchups</h1>
 
 <% @odds.each do |o| %>
-    <h2><%= o.teams %></h2>
+  <p>
+    <h2><%= JSON[o.teams][0] %> vs <%= JSON[o.teams][1] %></h2>
     <h2><%= o.commence_time %></h2>
-    <% binding.pry %> 
+    <h2><%= JSON[o.site_key] %></h2>
+  </p>
 <% end %>
