@@ -1,1 +1,10 @@
 <h1>All Bets</h1>
+
+<% @bets.each do |bet| %>
+    <p>
+    <h1>User Email:<%= bet.user.email %></h1>
+    <h1>Amount <%= number_to_currency(bet.amount) %></h1>
+    <h1>Matchup <%= bet.odd.teams %></h1>
+    <h1>Odds <%= JSON[bet.odd.odds][0] %></h1>
+    </p><br>
+<% end %>

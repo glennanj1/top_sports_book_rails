@@ -6,12 +6,11 @@ Rails.application.routes.draw do
   
   resources :sports, only: [:index]  
 
-  resources :bets 
 
-  resources :odds, only: [:index] 
-    #do 
-    #resources :bets, shallow: true
+
+  resources :odds, only: [:index] do 
+    resources :bets, shallow: true
     # 8 routes 3 nested 5 unested
-    #end
+  end
       
 end

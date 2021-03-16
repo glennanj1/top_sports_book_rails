@@ -1,7 +1,8 @@
 class BetsController < ApplicationController
+    
 
     def index
-        @bet = Bet.all
+        @bets = Bet.all
     end
 
     def show 
@@ -9,13 +10,18 @@ class BetsController < ApplicationController
     end
 
     def new 
-        @bet = Bet.new
+        @odd = Odd.find(params[:odd_id])
+        @bet = Bet.new(odd_id: params[:odd_id])
     end
 
     def create 
+       
         @bet = Bet.new(bet_params)
+        
+        @bet.user_id = current_user.id
+        @bet.odd_id = params[:odd_id]
         if @bet.save 
-            redirect_to bets_path
+            redirect_to odd_bets_path
         else
             raise.params.inspect
             render :new 
@@ -44,9 +50,10 @@ class BetsController < ApplicationController
 
     private
 
-    def bet_params(*args)
-        params.require(:bet).permit(*args)
+    def bet_params
+        params.require(:bet).permit(:amount)
     end
+    
     
 
    
