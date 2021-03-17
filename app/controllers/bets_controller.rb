@@ -2,7 +2,11 @@ class BetsController < ApplicationController
     
 
     def index
-        @bets = Bet.all
+        if params[:odd_id] && @odd = Odd.find(params[:odd_id])
+            @bets = @odd.bets 
+        else
+            @bet = Bet.all
+        end
     end
 
     def show 
@@ -10,16 +14,26 @@ class BetsController < ApplicationController
     end
 
     def new 
-        @odd = Odd.find(params[:odd_id])
-        @bet = Bet.new(odd_id: params[:odd_id])
+        binding.pry
+        if params[:odd_id] && @odd = Odd.find(params[:odd_id])
+            @bet = Bet.new(odd_id: params[:odd_id])
+        else
+            @bet = Bet.new
+        end
     end
 
     def create 
-       
-        @bet = Bet.new(bet_params)
         
+        @bet = Bet.new(bet_params)
         @bet.user_id = current_user.id
         @bet.odd_id = params[:odd_id]
+
+        if params[:odd_id]
+            @odd = Odd.find(params[:odd_id])
+        end
+        
+        # @bet.user_id = current_user.id
+        # @bet.odd_id = params[:odd_id]
         if @bet.save 
             redirect_to odd_bets_path
         else
@@ -34,7 +48,7 @@ class BetsController < ApplicationController
 
     def update 
         @bet = Bet.find(params[:id])
-        @bet.update(bet_params(:odd))
+        @bet.update(bet_params)
         if @bet.valid? 
             redirect_to odd_bet_path 
         else
@@ -50,11 +64,11 @@ class BetsController < ApplicationController
 
     private
 
-    def bet_params
-        params.require(:bet).permit(:amount)
-    end
+        def bet_params
+            params.require(:bet).permit(:amount)
+        end
     
-    
-
-   
 end
+
+    
+    
