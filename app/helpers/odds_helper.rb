@@ -14,7 +14,7 @@ module OddsHelper
     
         parse = JSON.parse(response.read_body)
         parse['data'].each do |x|
-            sport_id = 7
+            sport_id = 9
             sport_key = x['sport_key']
             sport_nice = x['sport_nice']
             teams = "#{x['teams'][0]} vs #{x['teams'][1]}"

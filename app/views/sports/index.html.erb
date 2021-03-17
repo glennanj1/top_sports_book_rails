@@ -1,4 +1,6 @@
 <h1>Sports</h1>
 <% @sports.each do |s| %>
-<h2><%= s.title %></h2>
+    
+<h2><%= link_to s.title, [s, :odds] %></h2>
+
 <% end %>

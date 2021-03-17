@@ -1,5 +1,7 @@
 class SportsController < ApplicationController
+
     def index  
-        @sports = Sport.all
+        @sports = Sport.all 
     end
+
 end

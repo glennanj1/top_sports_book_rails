@@ -5,7 +5,7 @@ class BetsController < ApplicationController
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
             @bets = @odd.bets 
         else
-            @bet = Bet.all
+            @bets = Bet.all
         end
     end
 
@@ -14,7 +14,6 @@ class BetsController < ApplicationController
     end
 
     def new 
-        binding.pry
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
             @bet = Bet.new(odd_id: params[:odd_id])
         else
@@ -23,7 +22,6 @@ class BetsController < ApplicationController
     end
 
     def create 
-        
         @bet = Bet.new(bet_params)
         @bet.user_id = current_user.id
         @bet.odd_id = params[:odd_id]
@@ -31,7 +29,6 @@ class BetsController < ApplicationController
         if params[:odd_id]
             @odd = Odd.find(params[:odd_id])
         end
-        
         # @bet.user_id = current_user.id
         # @bet.odd_id = params[:odd_id]
         if @bet.save 
