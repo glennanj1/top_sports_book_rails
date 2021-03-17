@@ -4,6 +4,7 @@
   <p>
     <h2><%= link_to o.teams, odd_path(o) %></h2>
     <h2><%= o.commence_time %></h2>
+    <h2>Odds <%= JSON[o.odds][0] %></h2>
   </p>
 
 <% end %>
