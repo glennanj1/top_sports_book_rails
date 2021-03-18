@@ -1,6 +1,6 @@
 module OddsHelper
-    def create_odds 
-        url = URI("https://odds.p.rapidapi.com/v1/odds?sport=icehockey_nhl&region=us&mkt=h2h&dateFormat=iso&oddsFormat=american")
+    def create_odds(key, id)
+        url = URI("https://odds.p.rapidapi.com/v1/odds?sport=#{key}&region=us&mkt=h2h&dateFormat=iso&oddsFormat=american")
 
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
@@ -11,10 +11,9 @@ module OddsHelper
         request["x-rapidapi-host"] = 'odds.p.rapidapi.com'
 
         response = http.request(request)
-    
         parse = JSON.parse(response.read_body)
         parse['data'].each do |x|
-            sport_id = 9
+            sport_id = id
             sport_key = x['sport_key']
             sport_nice = x['sport_nice']
             teams = "#{x['teams'][0]} vs #{x['teams'][1]}"
@@ -35,12 +34,5 @@ module OddsHelper
             o.save
 
         end 
-
-        
-        
-        
-
-    
-
     end
 end

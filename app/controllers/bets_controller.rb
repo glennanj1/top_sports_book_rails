@@ -29,8 +29,7 @@ class BetsController < ApplicationController
         if params[:odd_id]
             @odd = Odd.find(params[:odd_id])
         end
-        # @bet.user_id = current_user.id
-        # @bet.odd_id = params[:odd_id]
+    
         if @bet.save 
             redirect_to odd_bets_path
         else

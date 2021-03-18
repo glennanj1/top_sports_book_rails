@@ -1,6 +1,9 @@
 class OddsController < ApplicationController
-    before_action 
+    
+    
     def index 
+        @sport = Sport.find(params[:sport_id])
+        helpers.create_odds(@sport.key, @sport.id)
         @odds = Odd.where("sport_id = ?", params[:sport_id]) 
     end
 
