@@ -3,8 +3,8 @@
 <% @odds.each do |o| %>
   <p>
     <h2><%= link_to o.teams, odd_path(o) %></h2>
-    <h2><%= o.commence_time %></h2>
-    <h2>Odds <%= JSON[o.odds][0] %></h2>
+    <h2>Date: <%= o.commence_time.strftime('%m/%d/%Y') %></h2>
+    <h2>Start Time: <%= o.commence_time.strftime('%I:%M%p') %></h2>
   </p>
 
 <% end %>
