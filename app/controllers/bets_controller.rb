@@ -14,6 +14,11 @@ class BetsController < ApplicationController
     end
 
     def new 
+      
+        
+        # key = Odd.find_by(params[:odd_id]).sport_key
+        # id = Odd.find_by(params[:odd_id]).sport_id
+        # helpers.bet_helper(key, id)
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
             @bet = Bet.new(odd_id: params[:odd_id])
         else

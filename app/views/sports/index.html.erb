@@ -1,8 +1,9 @@
 <h1>Sports</h1>
 
 <% @sports.each do |s| %>
-<% if s.active? %>
-<h2><%= link_to s.title, [s, :odds] %></h2>
-<% end %>
-
+    <% if s.active? %>
+    <h2><%= link_to s.title, [s, :odds] %></h2>
+    <h2><%= s.details %></h2>
+    <h2><%= s.group %></h2>
+    <% end %><br>
 <% end %>

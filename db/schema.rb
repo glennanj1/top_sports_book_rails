@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2021_03_15_213051) do
     t.integer "odd_id"
     t.integer "user_id"
     t.integer "amount"
+    t.string "team"
+    t.integer "odds"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
