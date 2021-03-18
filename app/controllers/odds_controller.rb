@@ -1,6 +1,5 @@
 class OddsController < ApplicationController
     
-    
     def index 
         @sport = Sport.find(params[:sport_id])
         helpers.create_odds(@sport.key, @sport.id)

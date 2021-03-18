@@ -15,10 +15,11 @@ module SportsHelper
         
         parse['data'].each do |x|
           keys = x['key']
+          active = x['active']
           groups = x['group']
           detail = x['details']
           titles = x['title']
-          s = Sport.new(key: keys, group: groups, details: detail, title: titles)
+          s = Sport.new(key: keys, active: active, group: groups, details: detail, title: titles)
           s.save
         end  
     end

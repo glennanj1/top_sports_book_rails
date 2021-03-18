@@ -1,7 +1,8 @@
 <h1>Sports</h1>
 
 <% @sports.each do |s| %>
-    
+<% if s.active? %>
 <h2><%= link_to s.title, [s, :odds] %></h2>
+<% end %>
 
 <% end %>
