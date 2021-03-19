@@ -11,6 +11,8 @@ gem 'thin'
 gem "devise", github: "heartcombo/devise", branch: "master"
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
 
 
 gem 'dotenv-rails'

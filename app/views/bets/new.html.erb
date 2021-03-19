@@ -1,5 +1,15 @@
 <h1> New Bet </h1> 
-<%= %>
+<% if @bet.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@bet.errors.count, "error") %> prohibited this bet from being saved:</h2>
+
+    <ul>
+      <% @bet.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= form_for([@odd, @bet]) do |f| %>
     <%= f.label(:amount) %> 
@@ -8,6 +18,11 @@
     <%= f.collection_select :odds,  Odd.where(id: params[:odd_id]), :id, :odds, prompt: true %><br>
     <%= f.label(:team) %>
     <%= f.collection_select :team, Odd.where(id: params[:odd_id]), :id, :teams, prompt: true %><br>
+    
+    <%= f.label(:odds) %>
+
+
+
     
     <%= f.submit %> 
 <% end %>

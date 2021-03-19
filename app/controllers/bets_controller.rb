@@ -14,7 +14,7 @@ class BetsController < ApplicationController
     end
 
     def new 
-      
+        
         
         # key = Odd.find_by(params[:odd_id]).sport_key
         # id = Odd.find_by(params[:odd_id]).sport_id
@@ -38,7 +38,6 @@ class BetsController < ApplicationController
         if @bet.save 
             redirect_to odd_bets_path
         else
-            raise.params.inspect
             render :new 
         end
     end
