@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'welcome#home'
 
+
+  get '/bets/risky_bets' => 'bets#risky_bets'
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :sports, only: [:index] do

@@ -1,0 +1,6 @@
+<% @bets.each do |bet| %>
+    <p>
+    <h1>User Email:<%= bet.user.email %></h1>
+    <h1>Amount <%= number_to_currency(bet.amount) %></h1>
+    </p>
+<% end %>
