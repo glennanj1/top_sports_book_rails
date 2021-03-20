@@ -1,5 +1,4 @@
 class BetsController < ApplicationController
-    before_action :authenticate_user!
     
     def index
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
@@ -67,7 +66,7 @@ class BetsController < ApplicationController
     private
 
         def bet_params
-            params.require(:bet).permit(:amount)
+            params.require(:bet).permit(:amount, :team, :odds)
         end
     
 end

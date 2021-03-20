@@ -1,13 +1,11 @@
-<h1>Welcome</h1>
+<br><h1>Welcome</h1><br>
+<h2><%= link_to "Sports", sports_path %></h2><br>
+<h2> Articles </h2><br>
+<h2> Sports News </h2><br>
 
-<h2><%= link_to "Sports", sports_path %></h2>
-<h2> Popular Odds </h2>
-<h2> Risky Bets </h2>
 
-<% if user_signed_in? %>
-<h2><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></h2>
-<% else %>
-<h2><%= button_to "Log In", new_user_session_path %></h2>
-<% end %>
+
+
+
 
 

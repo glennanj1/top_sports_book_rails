@@ -15,14 +15,13 @@
     <%= f.label(:amount) %> 
     <%= f.number_field :amount %><br> 
     <%= f.label(:odds) %>
-    <%= f.collection_select :odds,  Odd.where(id: params[:odd_id]), :id, :odds, prompt: true %><br>
+    <%= f.number_field :odds %><br>
     <%= f.label(:team) %>
-    <%= f.collection_select :team, Odd.where(id: params[:odd_id]), :id, :teams, prompt: true %><br>
-    
+    <%= f.text_field :team %><br>
     <%= f.label(:odds) %>
-
-
-
+    <!--<%= f.number_field :odds %>-->
+    <!-- <%= f.collection_select :odds,  Odd.where(id: params[:odd_id]), :id, :odds, prompt: true %><br> -->
     
+
     <%= f.submit %> 
 <% end %>

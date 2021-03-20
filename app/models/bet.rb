@@ -4,8 +4,8 @@ class Bet < ApplicationRecord
 
     validates :amount, presence: true
     validates :amount, length: { maximum: 1000000 }
-    validates :team, presence: true 
-    validates :odds, presence: true 
+    # validates :team, presence: true 
+    # validates :odds, presence: true 
 
     def self.risky_bets
         where('amount > 100')

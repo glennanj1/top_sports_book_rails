@@ -22,10 +22,13 @@
 
     <div class="actions">
       <%= f.submit "Log in" %>
-      <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
     </div>
   <% end %>
 
+  <div class="actions">
+  <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+  </div>
+  
 
  
 </div>

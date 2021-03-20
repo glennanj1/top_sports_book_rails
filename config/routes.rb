@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 
 
   get '/bets/risky_bets' => 'bets#risky_bets'
+  #active record method
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+ 
+
+  
 
   resources :sports, only: [:index] do
     resources :odds, only: [:index]

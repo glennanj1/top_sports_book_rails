@@ -7,19 +7,32 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-     
+
   </head>
     <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/">Top Sports Book Rails</a>
     <form class="form-inline">
-      <a class="btn btn-outline-primary" href="users/sign_in" role="button">
-      Login
+      <a class="btn btn-outline-primary" href='<%=sports_path%>' role="button">
+      Sports 
       </a>
       <div style="padding-left: 10px;">
-        <a class="btn btn-outline-success" href="users/sign_up" role="button">
+        <a class="btn btn-outline-success" href="<%=bets_risky_bets_path%>" role="button">
+        Risky Bets 
+        </a>
+      </div>
+      <% if user_signed_in? %>
+      <div style="padding-left: 10px;">
+        <a class="btn btn-outline-success" href="<%=destroy_user_session_path%>" role="button">
+        Sign Out 
+        </a>
+      </div>
+      <% else %>
+      <div style="padding-left: 10px;">
+        <a class="btn btn-outline-success" href="<%=new_user_registration_path%>" role="button">
         Sign Up 
         </a>
       </div>
+      <% end %>
     </form>
   </nav>
   <body>
