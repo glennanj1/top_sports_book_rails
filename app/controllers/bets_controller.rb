@@ -1,5 +1,5 @@
 class BetsController < ApplicationController
-    
+    before_action :authenticate_user!
     def index
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
             @bets = @odd.bets 
@@ -20,6 +20,7 @@ class BetsController < ApplicationController
         # key = Odd.find_by(params[:odd_id]).sport_key
         # id = Odd.find_by(params[:odd_id]).sport_id
         # helpers.bet_helper(key, id)
+        @odd_options = Odd.all.map { |u| [] }
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
             @bet = Bet.new(odd_id: params[:odd_id])
         else
@@ -51,7 +52,7 @@ class BetsController < ApplicationController
         @bet = Bet.find(params[:id])
         @bet.update(bet_params)
         if @bet.valid? 
-            redirect_to odd_bet_path 
+            redirect_to bet_path(@bet), notice: "Successful Update"
         else
             render :edit 
         end
@@ -60,7 +61,7 @@ class BetsController < ApplicationController
     def destroy
         @bet = Bet.find(params[:id])
         @bet.destroy 
-        redirect_to odd_bets_path 
+        redirect_to root_path, notice: "Successful Deletion"
     end
 
     private

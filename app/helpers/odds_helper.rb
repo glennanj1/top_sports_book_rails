@@ -12,12 +12,14 @@ module OddsHelper
 
         response = http.request(request)
         parse = JSON.parse(response.read_body)
+        
         parse['data'].each do |x|
             sport_id = id
             sport_key = x['sport_key']
             sport_nice = x['sport_nice']
             teams = "#{x['teams'][0]} vs #{x['teams'][1]}"
             home_team = x['home_team']
+            
             commence_time = x['commence_time']
             site = []
             odd = []

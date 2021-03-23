@@ -1,6 +1,2 @@
-<h1><%= @odd.teams %></h1>
-<h2> Sites </h2> 
-<% JSON[@odd.site_and_odds].each do |site| %></h2>
-<h3><%= site %></h3><br>
-<% end %>
+<h1><%= render 'bets/sites' %>
 <h2><button><%= link_to 'New Bet', new_odd_bet_path(@odd) %></button></h2>

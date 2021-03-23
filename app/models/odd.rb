@@ -5,5 +5,6 @@ class Odd < ApplicationRecord
     validates :commence_time, uniqueness: true
     accepts_nested_attributes_for :bets
 
+
     
 end

@@ -1,27 +1,6 @@
 <h1> New Bet </h1> 
-<% if @bet.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@bet.errors.count, "error") %> prohibited this bet from being saved:</h2>
+<%= render 'errors' %>
+<%= render 'form' %>
+<%= render 'sites' %>
 
-    <ul>
-      <% @bet.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
 
-<%= form_for([@odd, @bet]) do |f| %>
-    <%= f.label(:amount) %> 
-    <%= f.number_field :amount %><br> 
-    <%= f.label(:odds) %>
-    <%= f.number_field :odds %><br>
-    <%= f.label(:team) %>
-    <%= f.text_field :team %><br>
-    <%= f.label(:odds) %>
-    <!--<%= f.number_field :odds %>-->
-    <!-- <%= f.collection_select :odds,  Odd.where(id: params[:odd_id]), :id, :odds, prompt: true %><br> -->
-    
-
-    <%= f.submit %> 
-<% end %>

@@ -1,9 +1,3 @@
-<h1>Edit Bet</h1>
-
-<%= form_for(@bet) do |f| %>
-    <%= f.label(:odd_id) %> 
-    <%= f.text_field :odd_id %> 
-    <%= f.label(:amount) %> 
-    <%= f.number_field :amount %> 
-    <%= f.submit %> 
-<% end %>
+<h1> Edit Bet </h1> 
+<%= render 'errors' %>
+<%= render 'form' %> 

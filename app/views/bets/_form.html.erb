@@ -1,0 +1,10 @@
+<%= form_for([@odd, @bet]) do |f| %>
+    <%= f.label(:amount) %> 
+    <%= f.number_field :amount %><br> 
+    <%= f.label(:odds) %>
+    <%= f.number_field :odds %><br>
+    <%= f.label(:team) %>
+    <%= f.text_field :team %><br>
+
+    <%= f.submit %> 
+<% end %>

@@ -1,14 +1,12 @@
 <h1> All Bets </h1>
 
-<%= link_to 'back to sports', sports_path %>
-
-
 <% @bets.each do |bet| %>
     <p>
     <h1>User:<%= bet.user.email %></h1>
     <h1>Amount <%= number_to_currency(bet.amount) %></h1>
     <h1>Odds <%= bet.odds %>
     <h1>Team <%= bet.team %>
+    <h1><%= link_to 'show', bet_path(bet) %></h1> 
     <!--<h1>Matchup <%= bet.odd.teams %></h1>-->
     <!--<h1>Odds <%= JSON[bet.odd.odds][0] %></h1>-->
     </p><br>
