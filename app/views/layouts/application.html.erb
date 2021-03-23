@@ -29,14 +29,19 @@
       </div>
       <% else %>
       <div style="padding-left: 10px;">
-        <a class="btn btn-outline-success" href="<%=new_user_registration_path%>" role="button">
-        Sign Up 
+        <a class="btn btn-outline-success" href="<%=new_user_session_path%>" role="button">
+        Sign In 
         </a>
       </div>
       <% end %>
     </form>
   </nav>
   <body>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

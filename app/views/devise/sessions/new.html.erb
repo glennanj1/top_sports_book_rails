@@ -1,8 +1,7 @@
 <div class="d-flex p-2">
 
-  
-
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -21,14 +20,14 @@
     <% end %>
 
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <%= f.submit "Log in" %> 
     </div>
+
   <% end %>
-
-  <div class="actions">
-  <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-  </div>
   
+</div>
 
- 
+<div class="flex-column">
+     <%= button_to "Sign Up", new_user_registration_path, :method => :get %>
+     <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
 </div>

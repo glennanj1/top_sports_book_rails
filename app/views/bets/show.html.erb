@@ -1,16 +1,10 @@
 <h1> Placed Bet </h1>
-<% flash.each do |type, msg| %>
-    <div class="alert alert-info">
-      <%= msg %>
-    </div>
-<% end %>
+
 <p>
-<h1>User:<%= @bet.user.email %></h1>
-<h1>Amount <%= number_to_currency(@bet.amount) %></h1>
-<h1>Odds <%= @bet.odds %>
-<h1>Team <%= @bet.team %>
-<!--<h1>Matchup <%= @bet.odd.teams %></h1>-->
-<!--<h1>Odds <%= JSON[@bet.odd.odds][0] %></h1>-->
+    <h1>User:<%= @bet.user.email %></h1>
+    <h1>Amount <%= number_to_currency(@bet.amount) %></h1>
+    <h1>Odds <%= @bet.odds %></h1>
+    <h1>Team <%= @bet.team %></h1>
 </p><br>
 
 <% if @bet.user.id == current_user.id  %>
