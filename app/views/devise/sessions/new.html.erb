@@ -24,10 +24,15 @@
     </div>
 
   <% end %>
+
+  
   
 </div>
 
-<div class="flex-column">
+<div class="d-flex p-2">
      <%= button_to "Sign Up", new_user_registration_path, :method => :get %>
-     <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+</div>
+
+<div class="d-flex p-2">
+     <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>     
 </div>

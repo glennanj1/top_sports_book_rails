@@ -1,2 +1,6 @@
-<h1><%= render 'bets/sites' %>
-<h2><button><%= link_to 'New Bet', new_odd_bet_path(@odd) %></button></h2>
+<%= render 'bets/sites' %>
+
+
+<div class="d-flex p-2">
+  <%= button_to 'New Bet', new_odd_bet_path(@odd), :method => :get %>
+</div>

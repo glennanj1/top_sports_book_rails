@@ -1,5 +1,12 @@
-<h1><%= @odd.teams %></h1>
-<h2> Sites </h2> 
-<% JSON[@odd.site_and_odds].each do |site| %></h2>
-<h3><%= site %></h3><br>
-<% end %>
+<div class="container-left">
+  <h2 class="text-center">Sites & Odds</h2>          
+  <table class="table table-light table-hover">
+    <tbody>
+      <% JSON[@odd.site_and_odds].each do |site| %>
+      <tr>
+        <td><%= site %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

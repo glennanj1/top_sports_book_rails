@@ -1,8 +1,22 @@
-<h1>Sports</h1>
-<% @sports.each do |s| %>
-    <% if s.active? %>
-    <h2><%= link_to s.title, [s, :odds] %></h2>
-    <h2><%= s.details %></h2>
-    <h2><%= s.group %></h2>
-    <% end %><br>
-<% end %>
+<div class="container-left">
+  <h2 class="text-center">Leagues</h2>
+  <p></p>            
+  <table class="table table-light table-hover">
+    <thead>
+      <tr>
+        <th>Sport</th>
+        <th>Details</th>
+        <th>Group</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sports.each do |s| %>
+      <tr>
+        <td><%= link_to s.title, [s, :odds] %></td>
+        <td><%= s.details %></td>
+        <td><%= s.group %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

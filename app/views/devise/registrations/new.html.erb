@@ -1,5 +1,7 @@
 <h2>Sign up</h2>
 
+<div class="d-flex p-2">
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -21,11 +23,16 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
+  <div class="actions"><br>
     <%= f.submit "Sign up" %>
   </div>
+
 <% end %>
 
+</div>
 
-<%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+<div class="d-flex p-2">
+  <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+</div>
+
 

@@ -10,6 +10,11 @@ class BetsController < ApplicationController
 
     def risky_bets
         @bets = Bet.risky_bets
+        if @bets.empty?
+            redirect_to sports_path, notice: "No Risky Bets At This Time....."
+        else
+            render 'index'
+        end
     end
 
     def show 
@@ -17,9 +22,6 @@ class BetsController < ApplicationController
     end
 
     def new 
-        # key = Odd.find_by(params[:odd_id]).sport_key
-        # id = Odd.find_by(params[:odd_id]).sport_id
-        # helpers.bet_helper(key, id)
         @odd_options = Odd.all.map { |u| [] }
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
             @bet = Bet.new(odd_id: params[:odd_id])
@@ -61,7 +63,7 @@ class BetsController < ApplicationController
     def destroy
         @bet = Bet.find(params[:id])
         @bet.destroy 
-        redirect_to root_path, notice: "Successful Deletion"
+        redirect_to sports_path, notice: "Successful Deletion"
     end
 
     private
