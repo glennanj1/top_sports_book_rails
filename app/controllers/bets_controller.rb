@@ -18,17 +18,12 @@ class BetsController < ApplicationController
     end
 
     def my_bets 
-        if user_signed_in?
-            id = current_user.id
-          @bets = Bet.my_bets(id)
+          @bets = current_user.bets
           if @bets.empty?
             redirect_to root_path, notice: "No Bets at this time.."
           else
             render 'index'
           end
-        else
-          redirect_to root_path, notice: "You need to sign In!"
-        end
       end
 
     def show 
@@ -36,25 +31,18 @@ class BetsController < ApplicationController
     end
 
     def new 
-        odd = Odd.find(params[:odd_id])
-        @selection = odd.odds_selection
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
+            @selection = @odd.odds_selection
             @bet = Bet.new(odd_id: params[:odd_id])
+            binding.pry
         else
             @bet = Bet.new
         end
     end
 
     def create 
-        odd = Odd.find(params[:odd_id])
-        @selection = odd.odds_selection
-        @bet = Bet.new(bet_params)
-        @bet.user_id = current_user.id
-        @bet.odd_id = params[:odd_id]
-
-        if params[:odd_id]
-            @odd = Odd.find(params[:odd_id])
-        end
+        binding.pry
+        @bet = current_user.bets.build(bet_params)
     
         if @bet.save 
             redirect_to odd_bets_path
@@ -65,14 +53,13 @@ class BetsController < ApplicationController
 
     def edit 
         @bet = Bet.find(params[:id])
-        @odd = @bet.odd
-        @selection = @odd.odds_selection
+        @selection = @bet.odd.odds_selection
     end
 
     def update 
+        binding.pry
         @bet = Bet.find(params[:id])
-        @odd = @bet.odd
-        @selection = @odd.odds_selection
+        @selection = @bet.odd.odds_selection
         @bet.update(bet_params)
         if @bet.valid? 
             redirect_to bet_path(@bet), notice: "Successful Update"
@@ -90,7 +77,7 @@ class BetsController < ApplicationController
     private
 
         def bet_params
-            params.require(:bet).permit(:amount, :team, :odds)
+            params.require(:bet).permit(:amount, :team, :odds, :odd_id)
         end
     
 end
