@@ -38,13 +38,6 @@ class BetsController < ApplicationController
     def new 
         odd = Odd.find(params[:odd_id])
         @selection = odd.odds_selection
-        
-        
-        # @odds = JSON[@odd.odds]
-        # @odds_list = @odds.map { |o| o[0]}
-        # @odds_list1 = @odds.map { |o| o[1] }
-        # @odds_selection = @odds_list.concat @odds_list1
-        
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
             @bet = Bet.new(odd_id: params[:odd_id])
         else
