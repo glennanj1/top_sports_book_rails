@@ -2,7 +2,17 @@
 
 <%= render 'errors' %>
 <h1 class> New Bet </h1> 
-<%= render 'form' %>
+<%= form_for([@odd, @bet]) do |f| %>
+    <%= f.label(:amount) %> 
+    <%= f.number_field :amount %><br> 
+    
+    <%= f.label(:team) %>
+    <%= f.text_field :team %><br>
+    <%= f.label(:odds) %>
+    <%= f.select(:odds, @odds_selection) %><br>
+
+    <%= f.submit %> 
+<% end %>
 <%= render 'sites' %>
 
 

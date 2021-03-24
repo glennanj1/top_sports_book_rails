@@ -22,7 +22,12 @@ class BetsController < ApplicationController
     end
 
     def new 
-        @odd_options = Odd.all.map { |u| [] }
+        @odd = Odd.find(params[:odd_id])
+        @odds = JSON[@odd.odds]
+        @odds_list = @odds.map { |o| o[0]}
+        @odds_list1 = @odds.map { |o| o[1] }
+        @odds_selection = @odds_list.concat @odds_list1
+        
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
             @bet = Bet.new(odd_id: params[:odd_id])
         else
@@ -48,6 +53,11 @@ class BetsController < ApplicationController
 
     def edit 
         @bet = Bet.find(params[:id])
+        @odd = @bet.odd
+        @o = JSON[@odd.odds]
+        @odds_list = @o.map { |o| o[0]}
+        @odds_list1 = @o.map { |o| o[1] }
+        @odds_selection = @odds_list.concat @odds_list1
     end
 
     def update 

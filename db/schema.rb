@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_15_213051) do
+ActiveRecord::Schema.define(version: 2021_03_24_040328) do
+
+  create_table "articles", force: :cascade do |t|
+    t.boolean "status"
+    t.string "name"
+    t.text "description"
+    t.string "url"
+    t.string "author"
+    t.string "title"
+    t.string "url_to_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "content"
+  end
 
   create_table "bets", force: :cascade do |t|
     t.integer "odd_id"
