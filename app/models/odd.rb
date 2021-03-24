@@ -5,6 +5,13 @@ class Odd < ApplicationRecord
     validates :commence_time, uniqueness: true
     accepts_nested_attributes_for :bets
 
+    def odds_selection
+        odds = JSON[self.odds]
+        odds_list = odds.map { |o| o[0]}
+        odds_list1 = odds.map { |o| o[1] }
+        odds_selection = odds_list.concat odds_list1
+    end
+
     def self.create_odds(key, id)
         url = URI("https://odds.p.rapidapi.com/v1/odds?sport=#{key}&region=us&mkt=h2h&dateFormat=iso&oddsFormat=american")
 

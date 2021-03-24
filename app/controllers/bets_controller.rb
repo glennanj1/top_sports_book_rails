@@ -17,16 +17,33 @@ class BetsController < ApplicationController
         end
     end
 
+    def my_bets 
+        if user_signed_in?
+            id = current_user.id
+          @bets = Bet.my_bets(id)
+          if @bets.empty?
+            redirect_to root_path, notice: "No Bets at this time.."
+          else
+            render 'index'
+          end
+        else
+          redirect_to root_path, notice: "You need to sign In!"
+        end
+      end
+
     def show 
         @bet = Bet.find(params[:id])
     end
 
     def new 
-        @odd = Odd.find(params[:odd_id])
-        @odds = JSON[@odd.odds]
-        @odds_list = @odds.map { |o| o[0]}
-        @odds_list1 = @odds.map { |o| o[1] }
-        @odds_selection = @odds_list.concat @odds_list1
+        odd = Odd.find(params[:odd_id])
+        @selection = odd.odds_selection
+        
+        
+        # @odds = JSON[@odd.odds]
+        # @odds_list = @odds.map { |o| o[0]}
+        # @odds_list1 = @odds.map { |o| o[1] }
+        # @odds_selection = @odds_list.concat @odds_list1
         
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
             @bet = Bet.new(odd_id: params[:odd_id])
@@ -36,6 +53,8 @@ class BetsController < ApplicationController
     end
 
     def create 
+        odd = Odd.find(params[:odd_id])
+        @selection = odd.odds_selection
         @bet = Bet.new(bet_params)
         @bet.user_id = current_user.id
         @bet.odd_id = params[:odd_id]
@@ -54,14 +73,13 @@ class BetsController < ApplicationController
     def edit 
         @bet = Bet.find(params[:id])
         @odd = @bet.odd
-        @o = JSON[@odd.odds]
-        @odds_list = @o.map { |o| o[0]}
-        @odds_list1 = @o.map { |o| o[1] }
-        @odds_selection = @odds_list.concat @odds_list1
+        @selection = @odd.odds_selection
     end
 
     def update 
         @bet = Bet.find(params[:id])
+        @odd = @bet.odd
+        @selection = @odd.odds_selection
         @bet.update(bet_params)
         if @bet.valid? 
             redirect_to bet_path(@bet), notice: "Successful Update"

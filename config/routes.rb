@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/bets/risky_bets' => 'bets#risky_bets'
   #active record method
 
+  get '/bets/my_bets' => 'bets#my_bets'
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
  
 

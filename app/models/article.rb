@@ -14,8 +14,6 @@ class Article < ApplicationRecord
 
             a = Article.new(url_to_image: x['urlToImage'], title: title, name: name, description: description, url: url, content: content)  
             a.save
-            
-            
         end
     end
 end

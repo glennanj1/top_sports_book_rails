@@ -1,11 +1,10 @@
 <% if @bet.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@bet.errors.count, "error") %> prohibited this bet from being saved:</h2>
-
-    <ul>
-      <% @bet.errors.each do |error| %>
-        <li><%= error.full_message %></li>
+    <div class="alert alert-info">
+      <%= pluralize(@bet.errors.count, "error") %> prohibited this bet from being saved: 
+        <% @bet.errors.each do |error| %>
+        <%= error.full_message %>
       <% end %>
-    </ul>
+    </div>
   </div>
 <% end %>
