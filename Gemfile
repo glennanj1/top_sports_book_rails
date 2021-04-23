@@ -13,6 +13,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+gem 'pg', '~> 1.1'
 
 
 gem 'dotenv-rails'

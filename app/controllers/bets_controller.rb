@@ -1,5 +1,6 @@
 class BetsController < ApplicationController
     before_action :authenticate_user!
+    
     def index
         if params[:odd_id] && @odd = Odd.find(params[:odd_id])
             @bets = @odd.bets 
