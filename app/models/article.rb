@@ -12,7 +12,8 @@ class Article < ApplicationRecord
             url_to_image = x['urlToImage']
             content = x['content']
 
-            a = Article.new(url_to_image: x['urlToImage'], title: title, name: name, description: description, url: url, content: content)  
+            a = Article.new(url_to_image: x['urlToImage'], title: title, name: name, description: description, url: url, content: content)
+            next if a.url_to_image == nil
             a.save
         end
     end
