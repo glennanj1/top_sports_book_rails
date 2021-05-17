@@ -1,6 +1,6 @@
 # README
 
-#References
+# References
 FavIcon reference:
 <a target="_blank" href="https://icons8.com/icons/set/american-football-player">American Football Player icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
