@@ -18,7 +18,7 @@ then start up thin
 # Contributers Guide
 Feel free to contribute to this project. 
 
-#Ruby Version
+# Ruby Version
 * Ruby version ~> 2.7.3
 
 # License
