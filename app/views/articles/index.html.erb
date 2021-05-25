@@ -1,9 +1,14 @@
 <h1>Articles</h1>
-<div>
-<% @articles.each do |a| %>
-        <br><h1><%= a.title %></h1>
-        <img src="<%=a.url_to_image%>"/><br>
-        <h2><a href='<%= a.url %>'>Link</a></h2>
-<% end %><br>
+
+<div class="card mb-3">
+  <% @articles.each do |a| %>
+  <img class="card-img-top" src='<%=a.url_to_image%>' alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= a.title %></h5>
+    <p class="card-text"><%= a.description %></p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+  <% end %><br>
 </div>
+
 
