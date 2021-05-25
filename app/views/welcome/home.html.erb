@@ -4,16 +4,16 @@
   <ul>
     <div class="row row-cols-3 align-items-stretch py-5">
     <div class="col">
-      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('<%=@article.first.url_to_image%>');">
+      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('<%=@article[-1].url_to_image%>');">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%=@article.first.title%></h2>
+          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%=@article[-1].title%></h2>
           <ul class="d-flex list-unstyled mt-auto">
             <li class="me-auto">
-              <img src="<%=@article.first.url_to_image%>" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              <img src="<%=@article[-1].url_to_image%>" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
             </li>
             <li class="d-flex align-items-center me-3">
               <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-              <small><%=@article.first.name%></small>
+              <small><%=@article[-1].name%></small>
             </li>
             <li class="d-flex align-items-center">
               <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
@@ -27,16 +27,16 @@
   <ul>
     <div class="row row-cols-3 align-items-stretch py-5">
     <div class="col">
-      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('<%=@article.second.url_to_image%>');">
+      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('<%=@article[-2].url_to_image%>');">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%=@article.second.title%></h2>
+          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%=@article[-2].title%></h2>
           <ul class="d-flex list-unstyled mt-auto">
             <li class="me-auto">
-              <img src="<%=@article.second.url_to_image%>" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              <img src="<%=@article[-2].url_to_image%>" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
             </li>
             <li class="d-flex align-items-center me-3">
               <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-              <small><%=@article.second.name%></small>
+              <small><%=@article[-2].name%></small>
             </li>
             <li class="d-flex align-items-center">
               <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
@@ -50,16 +50,16 @@
   <ul>
   <div class="row row-cols-3 align-items-stretch py-5">
     <div class="col">
-      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('<%=@article.third.url_to_image%>');">
+      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('<%=@article[-3].url_to_image%>');">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%=@article.third.title%></h2>
+          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%=@article[-3].title%></h2>
           <ul class="d-flex list-unstyled mt-auto">
             <li class="me-auto">
-              <img src="<%=@article.third.url_to_image%>" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              <img src="<%=@article[-3].url_to_image%>" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
             </li>
             <li class="d-flex align-items-center me-3">
               <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-              <small><%=@article.third.name%></small>
+              <small><%=@article[-3].name%></small>
             </li>
             <li class="d-flex align-items-center">
               <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
