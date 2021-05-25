@@ -1,16 +1,16 @@
 # README
 
-#References
+# References
 FavIcon reference:
 <a target="_blank" href="https://icons8.com/icons/set/american-football-player">American Football Player icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 # Top Sports Book Rails
-Sinatra application that allows users to store/retrieve their placed sports bets.
+Ruby on Rails application that allows users to store/retrieve their placed sports bets. This app also has an articles feature that pulls from an api to show relevant articles.
 
 # Install Instructions
-First dowload the file from github.
+First clone the file from github.
 Then cd into the root directory
-After that run bundle install
+After that run `bundle install`
 run `rake db:migrate` 
 then start up thin 
 `thin start --ssl`
@@ -18,8 +18,8 @@ then start up thin
 # Contributers Guide
 Feel free to contribute to this project. 
 
-#Ruby Version
-* Ruby version ~> 2.6.1
+# Ruby Version
+* Ruby version ~> 2.7.3
 
 # License
 Copyright 2021 John Glennan
