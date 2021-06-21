@@ -16,6 +16,10 @@ gem 'omniauth-rails_csrf_protection'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'pg', '~> 1.1'
+gem 'fast_jsonapi'
+gem 'httparty', '~> 0.18.1'
+gem 'rack-cors'
+
 
 
 gem 'dotenv-rails'
