@@ -25,5 +25,8 @@ Rails.application.routes.draw do
     resources :bets, shallow: true
     # 8 routes 3 nested 5 unested
   end
+
+  #google api route 
+  resources :places, only: [:show]
       
 end
