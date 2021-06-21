@@ -19,7 +19,7 @@ gem 'pg', '~> 1.1'
 gem 'fast_jsonapi'
 gem 'httparty', '~> 0.18.1'
 gem 'rack-cors'
-
+gem 'faker'
 
 
 gem 'dotenv-rails'

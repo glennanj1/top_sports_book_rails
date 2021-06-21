@@ -107,6 +107,8 @@ GEM
     erubi (1.10.0)
     eventmachine (1.2.7)
     execjs (2.7.0)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
     faraday (1.4.1)
       faraday-excon (~> 1.1)
       faraday-net_http (~> 1.0)
@@ -313,6 +315,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise!
   dotenv-rails
+  faker
   fast_jsonapi
   httparty (~> 0.18.1)
   jbuilder (~> 2.7)
