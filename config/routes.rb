@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :profiles
+
   resources :articles
 
   
@@ -29,5 +29,13 @@ Rails.application.routes.draw do
 
   #google api route 
   resources :places, only: [:show]
+
+  #tail-swipes profile resource
+  resources :profiles
+
+  #tail-swipes messaging
+  resources :messages, only: [:create, :index, :show] do 
+    resources :conversations, only: [:create, :index]
+  end
       
 end
