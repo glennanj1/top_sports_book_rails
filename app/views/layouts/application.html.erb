@@ -10,45 +10,45 @@
    
 
   </head>
-    <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="/">Top Sports Book Rails</a>
-    <form class="form-inline">
-      <a class="btn btn-outline-danger" href='<%=articles_path%>' role="button">
-      Articles 
-      </a>
-      <div style="padding-left: 10px;">
-      <a class="btn btn-outline-primary" href='<%=sports_path%>' role="button">
-      Sports 
-      </a>
-      </div>
-      <div style="padding-left: 10px;">
-        <a class="btn btn-outline-success" href="<%=bets_risky_bets_path%>" role="button">
-        Risky Bets 
-        </a>
-      </div>
-      <% if user_signed_in? %>
-      <div style="padding-left: 10px;">
-        <a class="btn btn-outline-success" href="<%=bets_my_bets_path%>" role="button">
-        My Bets
-        </a>
-      </div>
-      
-      <div style="padding-left: 10px;">
-        <a class="btn btn-outline-success" href="<%=destroy_user_session_path%>" role="button">
-        Sign Out 
-        </a>
-      </div>
-      
-      <% else %>
-      <div style="padding-left: 10px;">
-        <a class="btn btn-outline-success" href="<%=new_user_session_path%>" role="button">
-        Sign In 
-        </a>
-      </div>
-      <% end %>
-    </form>
-  </nav>
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/">Top Sports Book Rails</a>
+      <form class="form-inline">
+        <a class="btn btn-outline-danger" href='<%=articles_path%>' role="button">
+        Articles 
+        </a>
+        <div style="padding-left: 10px;">
+        <a class="btn btn-outline-primary" href='<%=sports_path%>' role="button">
+        Sports 
+        </a>
+        </div>
+        <div style="padding-left: 10px;">
+          <a class="btn btn-outline-success" href="<%=bets_risky_bets_path%>" role="button">
+          Risky Bets 
+          </a>
+        </div>
+        <% if user_signed_in? %>
+        <div style="padding-left: 10px;">
+          <a class="btn btn-outline-success" href="<%=bets_my_bets_path%>" role="button">
+          My Bets
+          </a>
+        </div>
+        
+        <div style="padding-left: 10px;">
+          <a class="btn btn-outline-success" href="<%=destroy_user_session_path%>" role="button">
+          Sign Out 
+          </a>
+        </div>
+        
+        <% else %>
+        <div style="padding-left: 10px;">
+          <a class="btn btn-outline-success" href="<%=new_user_session_path%>" role="button">
+          Sign In 
+          </a>
+        </div>
+        <% end %>
+      </form>
+    </nav>
     <% flash.each do |type, msg| %>
       <div class="alert alert-info">
         <%= msg %>
