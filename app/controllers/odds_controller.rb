@@ -4,6 +4,7 @@ class OddsController < ApplicationController
         @sport = Sport.find(params[:sport_id])
         Odd.create_odds(@sport.key, @sport.id)
         @odds = Odd.where("sport_id = ?", params[:sport_id]) 
+        @odds = Odd.order('created_at DESC')
     end
 
     def show 
