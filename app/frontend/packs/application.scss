@@ -1,6 +1,11 @@
 // inside app/frontend/packs/application.scss  
 
 // Just a quick ugly style to see if our CSS works  
+.btn {
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
 
 // Import Bootstrap v5  
 @import "~bootstrap/scss/bootstrap"; 
