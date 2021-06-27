@@ -3,8 +3,8 @@ class OddsController < ApplicationController
     def index 
         @sport = Sport.find(params[:sport_id])
         Odd.create_odds(@sport.key, @sport.id)
-        @odds = Odd.where("sport_id = ?", params[:sport_id]) 
-        @odds = Odd.order('created_at DESC')
+        odd = Odd.where("sport_id = ?", params[:sport_id]) 
+        @odds = odd.order(created_at: :desc)
     end
 
     def show 
