@@ -3,7 +3,7 @@ class Sport < ApplicationRecord
     has_many :odds
     has_many :bets, through: :odds
 
-    validates :title, presence: true 
+    validates :title, uniqueness: true
 
     def self.create_sports
         url = URI("https://odds.p.rapidapi.com/v1/sports")
@@ -27,7 +27,16 @@ class Sport < ApplicationRecord
           titles = x['title']
     
           s = Sport.new(key: keys, active: active, group: groups, details: detail, title: titles)
-          s.save
+          if Sport.exists?(title: s.title) 
+            sport = Sport.find_by(title: s.title)
+            if sport.active != s.active 
+              sport.update(active: s.active)
+            else
+              next
+            end
+          else
+            s.save
+          end
         end  
     end
 
