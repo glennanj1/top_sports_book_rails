@@ -1,6 +1,24 @@
 // inside app/frontend/packs/application.scss  
 
 // Just a quick ugly style to see if our CSS works  
+html, body {
+    height: 100%
+}
+
+ol,
+ul {
+  padding-right: 2rem;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 150px;
+}
+
+#wrap {
+    min-height: 100%
+}
+
 .btn {
     width: 100px;
     margin-left: 10px;
@@ -8,11 +26,12 @@
     margin-bottom: 10px;
 }
 
-.footer {
+#footer {
     position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 5rem;
+    margin-top: -150px;
+    height: 200px;
+    clear: both;
+    padding-top: 20px;
 }
 
 // Import Bootstrap v5  
