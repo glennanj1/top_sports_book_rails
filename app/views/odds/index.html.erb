@@ -14,8 +14,8 @@
       <% @odds.each do |o| %>
       <tr>
         <td><%= link_to o.teams, odd_path(o) %></td>
-        <td><%= o.commence_time.strftime('%m/%d/%Y') %></td>
-        <td><%= o.commence_time.strftime('%I:%M%p') %></td>
+        <td><%= format_date(o.commence_time)%></td>
+        <td><%= format_time(o.commence_time)%> EST </td>
       </tr>
       <% end %>
     </tbody>
