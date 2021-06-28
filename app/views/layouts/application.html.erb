@@ -57,19 +57,18 @@
           </div>
       </div>
     </nav>
-    <% flash.each do |type, msg| %>
-      <div class="alert alert-info">
-        <%= msg %>
+    <div id="wrap">
+      <div id='main'>
+        <% flash.each do |type, msg| %>
+          <div class="alert alert-info">
+            <%= msg %>
+          </div>
+        <% end %>
+        <%= yield %>
       </div>
-    <% end %>
-    <%= yield %>
-    <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted">
-      <!-- Section: Social media -->
-
-
-      <!-- Copyright -->
-      <div class="footer text-center p-4 text-light bg-dark">
+    </div>
+    <footer id="footer" class="text-center text-lg-start bg-dark text-muted">
+      <div class="text-center p-4 text-light">
         © 2021 Copyright:
         <a class="text-reset fw-bold" href="https://johng.netlify.app/">John Glennan</a>
       </div>
