@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   end
 
   #google api route 
-  resources :places, only: [:show]
+  resources :places
 
   #tail-swipes profile resource
   resources :profiles
