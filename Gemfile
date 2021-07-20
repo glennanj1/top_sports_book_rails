@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.3"
 
+gem 'http'
+gem 'optparse'
 gem 'whenever'
 gem 'net-http'
 gem 'json'
