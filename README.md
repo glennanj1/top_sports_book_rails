@@ -1,8 +1,8 @@
 # README
 
-# References
-FavIcon reference:
-<a target="_blank" href="https://icons8.com/icons/set/american-football-player">American Football Player icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+# Deploy
+
+Live and deployed on <a href='topsportsbook.org'>TopSportsBook</a>
 
 # Top Sports Book Rails
 Ruby on Rails application that allows users to store/retrieve their placed sports bets. This app also has an articles feature that pulls from an api to show relevant articles.
@@ -20,6 +20,11 @@ Feel free to contribute to this project.
 
 # Ruby Version
 * Ruby version ~> 2.7.3
+
+# References
+FavIcon reference:
+<a target="_blank" href="https://icons8.com/icons/set/american-football-player">American Football Player icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
 
 # License
 Copyright 2021 John Glennan
