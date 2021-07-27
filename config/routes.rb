@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :mpg_emails, only: [:create]
   resources :reviews, only: [:index]
 
   resources :articles
