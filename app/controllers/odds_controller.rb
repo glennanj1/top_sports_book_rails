@@ -1,4 +1,5 @@
 class OddsController < ApplicationController
+    before_action :authenticate_user!
     
     def index 
         @sport = Sport.find(params[:sport_id])
