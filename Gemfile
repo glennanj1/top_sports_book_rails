@@ -12,7 +12,7 @@ gem 'uri'
 gem 'openssl'
 gem 'pry'
 gem 'thin'
-gem "devise", github: "heartcombo/devise", branch: "master"
+gem "devise", github: "heartcombo/devise", branch: "main"
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
 gem 'bootstrap', '~> 4.1.1'
