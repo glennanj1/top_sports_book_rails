@@ -2,7 +2,7 @@
   "name": "top-sports-book-rails",
   "private": true,
   "dependencies": {
-    "@popperjs/core": "2.0.0-alpha.1",
+    "@popperjs/core": "2.6.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -15,5 +15,8 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.11.2"
+  },
+  "engines": {
+    "node": "14.19.1"
   }
 }
