@@ -22,7 +22,7 @@ class Review < ApplicationRecord
             #     next
             # end
             r = Review.new(review_id: id, rating: rating, user_id: user_id, profile_url: profile_url, image_url: image_url, name: name, text: text, time_created: time_created, url: url) 
-            r.save! 
+            r.save 
         end
     end
 
